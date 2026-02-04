@@ -1,33 +1,41 @@
-# 2월 4일
-오늘 9번 고객센터 폼과 10번 자격증 폼 만들거예요.
+# 2월 5일
 
-9번 할 수 있는 만큼 디자인하고 있으세요.
-
+1~7, 11 폼 디자인
 
 #### [datafiles, Setting.jar, 문제지](https://drive.google.com/file/d/1ETeUsw9BxpnnpwkESPEERE3CjN1tIltc/view?usp=sharing)
 
 #### ▲클릭하면 구글 드라이브에 연결되어있음
 
 
-
-
+▼ main 이미지 슬라이드
 ```
-DefaultTableCellRenderer dtc=new DefaultTableCellRenderer() {
-			@Override
-			public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
-					boolean hasFocus, int row, int column) {
-				// TODO Auto-generated method stub
-				Component cmp=null;
-				if(column==2) {
-					JLabel lb=new JLabel(new ImageIcon(new ImageIcon("./datafiles/icon/locker2.png").getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH)));
-					lb.setText("문의 내용입니다.");
-					lb.setFont(getFont().deriveFont(15));
-					cmp=lb;
+img1.setIcon(new ImageIcon(new ImageIcon("./datafiles/main/"+i1+".png").getImage().getScaledInstance(400,230,Image.SCALE_SMOOTH)));
+	img2.setIcon(new ImageIcon(new ImageIcon("./datafiles/main/"+i2+".png").getImage().getScaledInstance(400,230,Image.SCALE_SMOOTH)));
+	Timer timer1=new Timer();
+	TimerTask task1=new TimerTask() {
+		int x=0;
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			x-=5;
+			if(x<=-400) {
+				x=0;
+				
+				i1++;
+				i2++;
+				if(i1==6) {
+					i1=1;
 				}
-				return cmp;
+				if(i2==6) {
+					i2=1;
+				}
+				
+				img1.setIcon(new ImageIcon(new ImageIcon("./datafiles/main/"+i1+".png").getImage().getScaledInstance(400,230,Image.SCALE_SMOOTH)));
+				img2.setIcon(new ImageIcon(new ImageIcon("./datafiles/main/"+i2+".png").getImage().getScaledInstance(400,230,Image.SCALE_SMOOTH)));
 			}
-		};
-		table.getColumn(co[2]).setCellRenderer(dtc);
-		table.setShowGrid(false);
-		jsp.setBorder(BorderFactory.createEmptyBorder());
+			img1.setLocation(x, 0);
+			img2.setLocation(x+400, 0);
+		}
+	};
+	timer1.schedule(task1, 0, 10);
 ```

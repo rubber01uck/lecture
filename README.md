@@ -1,11 +1,16 @@
-# 2월 5일
+## 2월 6일
 
 1~7, 11 폼 디자인
 
-#### [datafiles, Setting.jar, 문제지](https://drive.google.com/file/d/1ETeUsw9BxpnnpwkESPEERE3CjN1tIltc/view?usp=sharing)
+<br>
 
+#### [datafiles, Setting.jar, 문제지](https://drive.google.com/file/d/1ETeUsw9BxpnnpwkESPEERE3CjN1tIltc/view?usp=sharing)
 #### ▲클릭하면 구글 드라이브에 연결되어있음
 
+
+---
+
+**[코드]**
 
 ▼ main 이미지 슬라이드
 ```
@@ -38,4 +43,15 @@ img1.setIcon(new ImageIcon(new ImageIcon("./datafiles/main/"+i1+".png").getImage
 		}
 	};
 	timer1.schedule(task1, 0, 10);
+```
+
+▼ 자격증 목록 폼, 기출문제 맛보기
+```
+Desktop.getDesktop.open(new File("./datafiles/question/1/1.pdf"));
+```
+
+▼ 시험일정 폼, 날짜 더하기
+```
+LocalDate date=LocalDate.parse("2025-10-25");
+date.plusday(7);
 ```

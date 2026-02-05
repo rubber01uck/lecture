@@ -45,9 +45,12 @@ img1.setIcon(new ImageIcon(new ImageIcon("./datafiles/main/"+i1+".png").getImage
 	timer1.schedule(task1, 0, 10);
 ```
 
-▼ 자격증 목록 폼, 기출문제 맛보기
+▼ 자격증 목록 폼, 기출문제 맛보기(pdf 실행)
 ```
-Desktop.getDesktop.open(new File("./datafiles/question/1/1.pdf"));
+try{
+    Desktop.getDesktop.open(new File("./datafiles/question/(파일명)/1.pdf"));
+}catch(){
+}
 ```
 
 ▼ 시험일정 폼, 날짜 더하기
